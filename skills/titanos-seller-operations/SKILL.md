@@ -11,11 +11,11 @@ Use live Titanos Selling Partner data for account-specific Amazon work. Keep eve
 
 ## Workflow
 
-1. Discover the relevant tools with `titanos_search_tools` using `domain="amazon-seller"`.
-2. Identify the Selling Partner integration and account before querying business data.
-3. Confirm marketplace; never silently merge BR, US, MX, or other accounts.
-4. Use the smallest report window and dataset that answers the question.
-5. Report exact coverage dates, freshness, and missing data.
+1. Search once with the exact goal, `domain="amazon-seller"`, and the expected access type.
+2. Execute `recommended_tool` directly with the schema returned by search; describe only another alternative.
+3. Identify the Selling Partner integration and account only when the task does not already provide them.
+4. Confirm marketplace; never silently merge BR, US, MX, or other accounts.
+5. Reuse discovered tool schemas for follow-up calls in the same conversation.
 
 ## Read operations
 

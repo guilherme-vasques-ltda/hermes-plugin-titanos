@@ -11,11 +11,11 @@ Use Titanos MCP for live Amazon Ads data and operations. Diagnose first; separat
 
 ## Workflow
 
-1. Discover Ads tools with `titanos_search_tools` using `domain="amazon-ads"`.
-2. Identify integration, profile, marketplace, brand, and requested date window.
-3. Pull live campaign/resource state and completed report coverage.
-4. Analyze with business context: margin, stock, listing health, Buy Box, and campaign intent.
-5. Rank actions by expected impact and reversibility.
+1. Search once with the exact objective, `domain="amazon-ads"`, and `access="read"` or `"write"`.
+2. Execute `recommended_tool` directly with the returned schema; describe only a different alternative.
+3. Reuse the chosen tool/schema for repeated report windows or resources in the same conversation.
+4. Identify integration/profile only when absent or ambiguous, then pull live state and completed report coverage.
+5. Analyze with business context: margin, stock, listing health, Buy Box, and campaign intent.
 
 ## Analysis rules
 

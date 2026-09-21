@@ -6,7 +6,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "@titanos/mcp-agents@1.47.1"
+        "@titanos/mcp-agents@1.47.2"
       ],
       "env": {
         "TITANOS_API_KEY": ""

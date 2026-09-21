@@ -22,12 +22,23 @@ This plugin also ships focused operating skills. Hermes exposes them under its g
 - `:titanos-marketplace-operations`
 - `:titanos-safe-writes`
 
+## Fast path — economize chamadas
+
+O orçamento padrão para a primeira ação é **2 chamadas MCP**:
+
+1. `titanos_search_tools` uma vez, com objetivo específico e `domain`/`access` quando conhecidos.
+2. Se `recommended_tool` corresponder ao objetivo, chame `titanos_call_tool` diretamente usando o `input_schema` já retornado.
+
+Não chame `titanos_describe_tool` para `recommended_tool`; use-o apenas ao escolher uma alternativa sem schema. Não chame `titanos_list_tool_domains` quando o domínio for inferível. Durante a mesma conversa e versão do servidor, reutilize o nome e o schema já descobertos e vá direto a `titanos_call_tool`. Use `whoami` somente para dúvida real de organização, conta, perfil ou escopo — não como ritual em toda tarefa.
+
+Domínios conhecidos: `titanos-ai`, `titanos-miner`, `titanos-core`, `amazon-seller`, `amazon-content`, `amazon-ads`, `mercado-livre`, `olist`, `bling`, `shopee`.
+
 ## First connection
 
 The plugin intentionally contains no credential. Authenticate once in a browser before asking Hermes to use Titanos tools:
 
 ```bash
-npx -y @titanos/mcp-agents@1.47.1 login
+npx -y @titanos/mcp-agents@1.47.2 login
 ```
 
 The Titanos client stores the OAuth session locally and refreshes it when needed. Do not put credentials, tokens or API keys into `mcp.json`, chat messages, skills or repository files.
@@ -35,13 +46,13 @@ The Titanos client stores the OAuth session locally and refreshes it when needed
 ## Check connection
 
 ```bash
-npx -y @titanos/mcp-agents@1.47.1 status
+npx -y @titanos/mcp-agents@1.47.2 status
 ```
 
 If there is no session, run the login command again. To disconnect this computer, use:
 
 ```bash
-npx -y @titanos/mcp-agents@1.47.1 logout
+npx -y @titanos/mcp-agents@1.47.2 logout
 ```
 
 ## Usage rules

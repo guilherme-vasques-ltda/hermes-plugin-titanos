@@ -11,7 +11,7 @@ Use Titanos as the live gateway for marketplace and ERP operations. Keep tenant,
 
 ## Domain routing
 
-Use `titanos_list_tool_domains`, then search the applicable domain:
+Use the known domain directly; do not spend a call listing domains:
 
 - `mercado-livre`: catalog, listings, orders, prices, claims, and logistics.
 - `olist`: connections, catalog, orders, finance, documents, and CRM.
@@ -21,10 +21,10 @@ Use `titanos_list_tool_domains`, then search the applicable domain:
 
 ## Workflow
 
-1. Discover the domain tools instead of guessing endpoint names.
-2. Describe generic endpoint tools before calling them.
-3. Confirm the connection/account and target identifiers.
-4. Prefer reads and dry runs before any mutation.
+1. Search once in the selected domain with the exact goal and access type.
+2. Execute `recommended_tool` directly with its returned schema.
+3. Describe only a non-recommended alternative whose schema was not returned.
+4. Confirm the connection/account and target identifiers before writes.
 5. Verify every external write by reading the exact target back.
 
 ## Guardrails

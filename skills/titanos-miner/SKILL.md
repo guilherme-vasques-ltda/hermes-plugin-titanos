@@ -11,11 +11,11 @@ Use Titanos MCP as the source of truth for current marketplace research. Never i
 
 ## Workflow
 
-1. Call `titanos_search_tools` with the user goal or `domain="titanos-miner"`.
-2. Call `titanos_describe_tool` before the first use of an unfamiliar tool.
-3. Run narrow searches first; widen only when the result is insufficient.
-4. Separate facts returned by Titanos from interpretation and recommendations.
-5. State marketplace, country, query, and data limitations in the answer.
+1. Call `titanos_search_tools` once with the user goal, `domain="titanos-miner"`, a narrow `limit`, and `access="read"` when applicable.
+2. If `recommended_tool` matches the goal, execute it directly with `titanos_call_tool`; its schema is already in the search result.
+3. Use `titanos_describe_tool` only for a non-recommended alternative without a schema.
+4. Reuse the selected tool name and schema for repeated queries in the same conversation.
+5. Separate facts returned by Titanos from interpretation and recommendations.
 
 ## Common jobs
 

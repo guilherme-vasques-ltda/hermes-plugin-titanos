@@ -52,13 +52,13 @@ hermes -p dev plugins enable titanos-mcp
 Run once on the same computer where Hermes runs:
 
 ```bash
-npx -y @titanos/mcp-agents@1.47.1 login
+npx -y @titanos/mcp-agents@1.47.2 login
 ```
 
 Complete the browser authorization. Check the saved connection without exposing a token:
 
 ```bash
-npx -y @titanos/mcp-agents@1.47.1 status
+npx -y @titanos/mcp-agents@1.47.2 status
 ```
 
 ## Verify
@@ -72,7 +72,7 @@ Open a fresh Hermes session and ask it to use a Titanos MCP tool. The first star
 
 ## Update
 
-This package pins the MCP server at `1.47.1`. Updating the server is a repository change: update `mcp.json`, tests and documentation together, then publish a reviewed release.
+This package pins the MCP server at `1.47.2`. Updating the server is a repository change: update `mcp.json`, tests and documentation together, then publish a reviewed release.
 
 ## Remove
 
@@ -84,5 +84,5 @@ hermes -p dev plugins remove titanos-mcp
 To revoke the local Titanos authorization afterwards:
 
 ```bash
-npx -y @titanos/mcp-agents@1.47.1 logout
+npx -y @titanos/mcp-agents@1.47.2 logout
 ```

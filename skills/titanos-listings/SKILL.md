@@ -17,10 +17,10 @@ Use Titanos for listing generation and live catalog diagnostics. Base recommenda
 
 ## Workflow
 
-1. Discover and describe the exact tool before use.
-2. Fetch the current listing when auditing or rewriting.
-3. Preserve verified product facts; never invent claims, certifications, materials, dimensions, or compatibility.
-4. Prioritize suppression/compliance risks, then conversion issues, then polish.
+1. Search once in the matching domain (`titanos-ai`, `amazon-seller`, or `amazon-content`) with the exact user goal.
+2. Execute `recommended_tool` directly using the returned schema. Describe only a different alternative that lacks a schema.
+3. Fetch the current listing when auditing or rewriting.
+4. Preserve verified product facts; never invent claims, certifications, materials, dimensions, or compatibility.
 5. For generated jobs, poll the returned result through the MCP rather than guessing completion.
 
 ## Safe output

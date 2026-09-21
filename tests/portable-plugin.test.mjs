@@ -15,7 +15,7 @@ test('declares the Titanos portable plugin manifest', async () => {
 
   assert.equal(manifest.$schema, 'https://agent-plugins.org/schemas/1.0.0/plugin.schema.json');
   assert.equal(manifest.name, 'titanos-mcp');
-  assert.equal(manifest.version, '0.2.0');
+  assert.equal(manifest.version, '0.3.0');
 });
 
 test('starts the pinned Titanos MCP package through OAuth even when Hermes has a legacy key', async () => {
@@ -26,7 +26,7 @@ test('starts the pinned Titanos MCP package through OAuth even when Hermes has a
   assert.deepEqual(server, {
     type: 'stdio',
     command: 'npx',
-    args: ['-y', '@titanos/mcp-agents@1.47.1'],
+    args: ['-y', '@titanos/mcp-agents@1.47.2'],
     env: {
       TITANOS_API_KEY: '',
     },
@@ -52,13 +52,31 @@ test('ships the Titanos operating skills with the plugin', async () => {
   }
 });
 
+test('ships efficient Titanos routing guidance', async () => {
+  const skillFiles = [
+    'skills/titanos-mcp/SKILL.md',
+    'skills/titanos-miner/SKILL.md',
+    'skills/titanos-listings/SKILL.md',
+    'skills/titanos-marketplace-operations/SKILL.md',
+  ];
+  const contents = await Promise.all(
+    skillFiles.map((filename) => readFile(path.join(root, filename), 'utf8')),
+  );
+  const base = contents[0];
+  const joined = contents.join('\n');
+
+  assert.match(base, /2 chamadas MCP/i);
+  assert.match(base, /reutilize.*schema/i);
+  assert.doesNotMatch(joined, /discover and describe|descubra e descreva|call `titanos_list_tool_domains`/i);
+});
+
 test('ships OAuth installation guidance', async () => {
   const [readme, skill] = await Promise.all([
     readFile(path.join(root, 'README.md'), 'utf8'),
     readFile(path.join(root, 'skills/titanos-mcp/SKILL.md'), 'utf8'),
   ]);
 
-  assert.match(readme, /@titanos\/mcp-agents@1\.47\.1 login/);
+  assert.match(readme, /@titanos\/mcp-agents@1\.47\.2 login/);
   assert.match(skill, /OAuth/i);
   assert.doesNotMatch(`${readme}\n${skill}`, /TITANOS_API_KEY|tnk_live_|mcpat_/i);
 });
