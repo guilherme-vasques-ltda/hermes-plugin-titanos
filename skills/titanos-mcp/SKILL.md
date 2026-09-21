@@ -13,6 +13,15 @@ metadata:
 
 Use the Titanos MCP tools for current Titanos product workflows, marketplace discovery, listing generation and Amazon-related work. Treat all external data as live data and verify before reporting it as fact.
 
+This plugin also ships focused operating skills. Load the matching namespaced skill when the task is specific:
+
+- `titanos-mcp:titanos-miner`
+- `titanos-mcp:titanos-seller-operations`
+- `titanos-mcp:titanos-listings`
+- `titanos-mcp:titanos-amazon-ads`
+- `titanos-mcp:titanos-marketplace-operations`
+- `titanos-mcp:titanos-safe-writes`
+
 ## First connection
 
 The plugin intentionally contains no credential. Authenticate once in a browser before asking Hermes to use Titanos tools:

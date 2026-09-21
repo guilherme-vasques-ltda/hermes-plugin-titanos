@@ -15,10 +15,10 @@ test('declares the Titanos portable plugin manifest', async () => {
 
   assert.equal(manifest.$schema, 'https://agent-plugins.org/schemas/1.0.0/plugin.schema.json');
   assert.equal(manifest.name, 'titanos-mcp');
-  assert.equal(manifest.version, '0.1.0');
+  assert.equal(manifest.version, '0.2.0');
 });
 
-test('starts the pinned Titanos MCP package via stdio without credentials', async () => {
+test('starts the pinned Titanos MCP package through OAuth even when Hermes has a legacy key', async () => {
   const mcp = await readJson('mcp.json');
   const server = mcp.mcpServers['titanos-agents'];
 
@@ -27,8 +27,29 @@ test('starts the pinned Titanos MCP package via stdio without credentials', asyn
     type: 'stdio',
     command: 'npx',
     args: ['-y', '@titanos/mcp-agents@1.47.1'],
+    env: {
+      TITANOS_API_KEY: '',
+    },
   });
-  assert.doesNotMatch(JSON.stringify(mcp), /TITANOS_API_KEY|tnk_|mcpat_/i);
+  assert.doesNotMatch(JSON.stringify(mcp), /tnk_|mcpat_/i);
+});
+
+test('ships the Titanos operating skills with the plugin', async () => {
+  const skillNames = [
+    'titanos-amazon-ads',
+    'titanos-listings',
+    'titanos-marketplace-operations',
+    'titanos-miner',
+    'titanos-safe-writes',
+    'titanos-seller-operations',
+  ];
+
+  for (const skillName of skillNames) {
+    const content = await readFile(path.join(root, 'skills', skillName, 'SKILL.md'), 'utf8');
+    assert.match(content, new RegExp(`^---\\nname: ${skillName}\\n`, 'm'));
+    assert.match(content, /^description: Use when /m);
+    assert.match(content, /Titanos/i);
+  }
 });
 
 test('ships OAuth installation guidance', async () => {

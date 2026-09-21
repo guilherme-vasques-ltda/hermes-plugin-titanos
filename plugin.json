@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "titanos-mcp",
-  "version": "0.1.0",
-  "description": "Connects Hermes to Titanos product and marketplace tools through the official OAuth MCP server.",
+  "version": "0.2.0",
+  "description": "Installs the official Titanos OAuth MCP server plus operating skills for marketplace, Amazon, listings, research and safe writes.",
   "author": {
     "name": "Titanos",
     "url": "https://www.titanos.com.br"

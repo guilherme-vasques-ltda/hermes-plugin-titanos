@@ -7,7 +7,10 @@
       "args": [
         "-y",
         "@titanos/mcp-agents@1.47.1"
-      ]
+      ],
+      "env": {
+        "TITANOS_API_KEY": ""
+      }
     }
   }
 }

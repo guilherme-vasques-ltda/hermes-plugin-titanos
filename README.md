@@ -1,6 +1,16 @@
 # Titanos MCP for Hermes
 
-Private Agent Plugin v1 package that connects Hermes to Titanos through the official `@titanos/mcp-agents` MCP server.
+Private Agent Plugin v1 package that installs the official `@titanos/mcp-agents` MCP server and Titanos operating skills in Hermes.
+
+One install provides:
+
+- OAuth MCP connection to the live Titanos tools.
+- Product and keyword research guidance.
+- Amazon Seller, listings, and Ads guidance.
+- Mercado Livre, Olist, Bling, Shopee, and Titanos Core guidance.
+- Safety rules for every write-capable operation.
+
+Hermes discovers the bundled skills automatically under the `titanos-mcp:` namespace. No separate skill installation is required.
 
 It does not contain a token, API key, `.env` file or a custom backend. Authentication uses the OAuth flow provided by the Titanos MCP client.
 
