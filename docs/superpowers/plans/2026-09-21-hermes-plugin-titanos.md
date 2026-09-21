@@ -92,7 +92,7 @@ Expected: FAIL por ausência de `README.md`.
 
 - [ ] **Step 3: Criar README e `.gitignore` mínimos**
 
-README deve instruir `hermes plugins install guilherme-vasques-ltda/hermes-plugin-titanos`, `npx -y @titanos/mcp-agents@1.47.1 login`, `hermes plugins enable titanos-mcp` e verificação por `hermes mcp list` em sessão nova.
+README deve instruir `hermes plugins install guilherme-vasques-ltda/hermes-plugin-titanos`, `npx -y @titanos/mcp-agents@1.47.1 login`, `hermes plugins enable titanos-mcp` e o início de uma sessão nova. `hermes mcp list` mostra apenas servidores configurados diretamente, então não é a verificação deste pacote portátil.
 
 - [ ] **Step 4: Reexecutar testes e validação**
 
