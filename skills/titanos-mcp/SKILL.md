@@ -13,14 +13,14 @@ metadata:
 
 Use the Titanos MCP tools for current Titanos product workflows, marketplace discovery, listing generation and Amazon-related work. Treat all external data as live data and verify before reporting it as fact.
 
-This plugin also ships focused operating skills. Load the matching namespaced skill when the task is specific:
+This plugin also ships focused operating skills. Hermes exposes them under its generated portable-plugin namespace. Use `skills_list`, then load the matching skill whose qualified name ends with:
 
-- `titanos-mcp:titanos-miner`
-- `titanos-mcp:titanos-seller-operations`
-- `titanos-mcp:titanos-listings`
-- `titanos-mcp:titanos-amazon-ads`
-- `titanos-mcp:titanos-marketplace-operations`
-- `titanos-mcp:titanos-safe-writes`
+- `:titanos-miner`
+- `:titanos-seller-operations`
+- `:titanos-listings`
+- `:titanos-amazon-ads`
+- `:titanos-marketplace-operations`
+- `:titanos-safe-writes`
 
 ## First connection
 
