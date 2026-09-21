@@ -1,0 +1,68 @@
+# Titanos MCP for Hermes
+
+Private Agent Plugin v1 package that connects Hermes to Titanos through the official `@titanos/mcp-agents` MCP server.
+
+It does not contain a token, API key, `.env` file or a custom backend. Authentication uses the OAuth flow provided by the Titanos MCP client.
+
+## Requirements
+
+- Hermes Agent with Agent Plugins v1 support.
+- Node.js and `npx` available on the machine running Hermes.
+- A Titanos account allowed to authorize the requested MCP scopes.
+
+## Install in Hermes Desktop
+
+1. Open **Settings → Plugins → Install from Git**.
+2. Enter `guilherme-vasques-ltda/hermes-plugin-titanos`.
+3. Review the package and install it. Keep it disabled until the Titanos OAuth connection exists.
+4. Enable **titanos-mcp** in Settings → Plugins.
+5. Start a new Hermes chat or run `/reset` so the MCP tools are discovered.
+
+## Install with the CLI
+
+For the `dev` Hermes profile:
+
+```bash
+hermes -p dev plugins install guilherme-vasques-ltda/hermes-plugin-titanos --no-enable
+hermes -p dev plugins enable titanos-mcp
+```
+
+## Authenticate Titanos
+
+Run once on the same computer where Hermes runs:
+
+```bash
+npx -y @titanos/mcp-agents@1.47.1 login
+```
+
+Complete the browser authorization. Check the saved connection without exposing a token:
+
+```bash
+npx -y @titanos/mcp-agents@1.47.1 status
+```
+
+## Verify
+
+```bash
+hermes -p dev plugins list --plain --no-bundled
+hermes -p dev plugins show titanos-mcp
+```
+
+Open a fresh Hermes session and ask it to use a Titanos MCP tool. The first startup downloads the pinned MCP package if it is not already in the npm cache.
+
+## Update
+
+This package pins the MCP server at `1.47.1`. Updating the server is a repository change: update `mcp.json`, tests and documentation together, then publish a reviewed release.
+
+## Remove
+
+```bash
+hermes -p dev plugins disable titanos-mcp
+hermes -p dev plugins remove titanos-mcp
+```
+
+To revoke the local Titanos authorization afterwards:
+
+```bash
+npx -y @titanos/mcp-agents@1.47.1 logout
+```
