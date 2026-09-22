@@ -1,7 +1,7 @@
 ---
 name: titanos-miner
 description: Use when researching products, markets, keywords, reviews, competitors, CNPJ, NCM, or INPI with live Titanos data.
-license: UNLICENSED
+license: MIT
 compatibility: Hermes Agent Plugin v1 with Titanos MCP enabled.
 ---
 

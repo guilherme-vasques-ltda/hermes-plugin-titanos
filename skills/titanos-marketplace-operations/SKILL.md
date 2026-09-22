@@ -1,7 +1,7 @@
 ---
 name: titanos-marketplace-operations
 description: Use when operating Mercado Livre, Olist, Bling, Shopee, imports, suppliers, or Titanos operational records through the Titanos MCP.
-license: UNLICENSED
+license: MIT
 compatibility: Hermes Agent Plugin v1 with Titanos MCP enabled.
 ---
 

@@ -9,7 +9,7 @@
   },
   "homepage": "https://www.titanos.com.br",
   "repository": "https://github.com/guilherme-vasques-ltda/hermes-plugin-titanos",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "keywords": [
     "titanos",
     "mcp",

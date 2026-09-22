@@ -1,7 +1,7 @@
 ---
 name: titanos-seller-operations
 description: Use when analyzing Amazon Seller Central inventory, orders, listings, reports, fees, pricing, finances, or account health through Titanos.
-license: UNLICENSED
+license: MIT
 compatibility: Hermes Agent Plugin v1 with Titanos MCP enabled.
 ---
 

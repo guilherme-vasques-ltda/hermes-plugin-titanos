@@ -1,7 +1,7 @@
 ---
 name: titanos-mcp
 description: Use when a Hermes task needs Titanos marketplace, product discovery, listing, or Amazon tools through this plugin.
-license: UNLICENSED
+license: MIT
 compatibility: Hermes Agent Plugin v1 with Node.js and npm/npx available.
 metadata:
   product: Titanos

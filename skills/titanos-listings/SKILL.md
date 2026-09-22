@@ -1,7 +1,7 @@
 ---
 name: titanos-listings
 description: Use when generating, auditing, diagnosing, or updating Amazon listings and marketplace product content with Titanos.
-license: UNLICENSED
+license: MIT
 compatibility: Hermes Agent Plugin v1 with Titanos MCP enabled.
 ---
 

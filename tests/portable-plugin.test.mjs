@@ -78,5 +78,6 @@ test('ships OAuth installation guidance', async () => {
 
   assert.match(readme, /@titanos\/mcp-agents@1\.47\.2 login/);
   assert.match(skill, /OAuth/i);
-  assert.doesNotMatch(`${readme}\n${skill}`, /TITANOS_API_KEY|tnk_live_|mcpat_/i);
+  assert.match(readme, /empty `TITANOS_API_KEY` value/);
+  assert.doesNotMatch(`${readme}\n${skill}`, /tnk_live_|mcpat_/i);
 });

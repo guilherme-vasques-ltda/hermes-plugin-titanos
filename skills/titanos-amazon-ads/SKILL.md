@@ -1,7 +1,7 @@
 ---
 name: titanos-amazon-ads
 description: Use when reading, diagnosing, planning, or changing Amazon Ads campaigns, budgets, bids, targets, search terms, or reports through Titanos.
-license: UNLICENSED
+license: MIT
 compatibility: Hermes Agent Plugin v1 with Titanos MCP enabled.
 ---
 

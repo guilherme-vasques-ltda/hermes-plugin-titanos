@@ -1,7 +1,7 @@
 ---
 name: titanos-safe-writes
 description: Use when a Titanos MCP request can create, update, pause, delete, submit, publish, spend, refund, or otherwise change external state.
-license: UNLICENSED
+license: MIT
 compatibility: Hermes Agent Plugin v1 with Titanos MCP enabled.
 ---
 
